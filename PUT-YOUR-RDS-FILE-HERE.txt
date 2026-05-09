@@ -1,0 +1,27 @@
+⚠️  ADD YOUR DATA FILE HERE
+==============================
+
+Place your cleaned R data file in this folder:
+
+  File name: coding_data_clean.RDS
+
+This file was produced in the Data Wrangling [R] assignment (Week 13)
+when you ran:
+
+  saveRDS(coding_data, "coding_data_clean.RDS")
+
+Once you place coding_data_clean.RDS here, DELETE this placeholder file.
+
+If you named your file something different, you will need to update
+the file path in 03-results.qmd (look for the line that says):
+
+  coding_data <- readRDS("coding_data_clean.RDS")
+
+── Where is my .RDS file? ──────────────────────────────────────────
+In RStudio, check your Files pane. It should be in the folder where
+your previous RStudio Project (.Rproj) was located. You can also run
+this in the Console to find it:
+
+  file.choose()   # opens a file browser
+
+Then copy the file into THIS project folder.

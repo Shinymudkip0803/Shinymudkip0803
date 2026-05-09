@@ -1,0 +1,53 @@
+---
+title: "Introduction"
+---
+
+
+
+::: {.section-badge}
+Phase I · The Journalist
+:::
+
+With artificial intelligence becoming widely mainstream within the last decade, many industries have taken to adopting its use. Which includes the video game industry, to varying levels of approval. The inclusion of AI has the potential to both improve the quality of a game and its perception, but also lower it significantly. Many game studios survive off the success of their latest games, so the inclusion of AI could potentially kill a game studio.
+
+## Background and Significance
+
+
+Prior research has consistently demonstrated that media coverage plays a powerful role in shaping audience perceptions of AI and video games [Filipović, 2023]. Studies examining AI have found that "Artificial intelligence (AI) has been a part of computer games for decades..." [Filipović, 2023]. However, most existing work has focused on the ethical uses of AI and often not in gaming, leaving the relationship between artificial intelligence and video games relatively understudied.
+
+Reddit represents a particularly important site of analysis because of just how popular it all is. Since 2005, Reddit has been a widely poplular space where hundreds of thousands of people post and comment every day.
+
+## Theoretical Framework
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     Introduce the theory you applied. Explain it clearly enough
+     that someone unfamiliar with it could understand it.
+     Then explain WHY this theory is the right lens for your study.
+     
+     Draw directly from your Annotated Manuscript. The article
+     you annotated likely either introduces or applies this theory.
+     
+     Common frameworks used in content analysis:
+       • Framing Theory (Entman, 1993; Gitlin, 1980)
+       • Agenda-Setting Theory (McCombs & Shaw, 1972)
+       • Cultivation Theory (Gerbner et al., 1986)
+       • Critical Discourse Analysis
+       • Gatekeeping Theory
+     ──────────────────────────────────────────────────────────────── -->
+
+This study is grounded in critical discorse analysis. Critical discourse analysis proposes that is a wide approach to studying the subject. In this case it looks at a wide variety of posts on the relationship between AI and video games. A defining feature of this framework is the critical approach to the data, which means it won't be looked at with any personal bias.
+
+Applied to the present study, critical discourse analysis suggests that the use of AI in games has a large impact on the public reception to it. This makes it an appropriate framework for analyzing tone, frame type, source type, outlet because it is important to see how the public reacts to AI in modern games.
+
+The article examined in the Annotated Manuscript — [Ternar et al, 2025] — provides a direct application of this framework to AI in video games, demonstrating so long as AI is used ethically, there doesn't seem to be much of a problem. [Ternar et al, 2025].
+
+## Research Questions
+
+
+Based on the gaps in the existing literature and the predictive logic of critical discourse analysis, this study addresses the following research questions:
+
+> **RQ1:** How does Social Media (X, Reddit, Facebook) frame Generative Artificial Intelligence and video game development?
+
+> **RQ2:** What is the relationship between AI and video games?
+
+Together, these questions aim to produce a systematic, empirically grounded account of how Reddit covers AI and video games — one that moves beyond anecdotal observation toward replicable measurement.

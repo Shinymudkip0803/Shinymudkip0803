@@ -1,0 +1,43 @@
+---
+title: "Methodology"
+---
+
+
+
+::: {.section-badge}
+Phase II–III · The Architect & Builder
+:::
+
+This study employed systematic quantitative content analysis to address the two research questions introduced in the previous section. Content analysis is appropriate here because it provides a replicable, transparent method for identifying patterns in media content at a scale that is not feasible through close reading alone [@CITATION_METHODS — e.g., Neuendorf, 2017; Krippendorff, 2018].
+
+## Data Source
+
+
+Data were collected from Reddit. This source was selected because Reddit works well because of the large variety it gives users access to. With a large variety of subreddits that allow users to converse with each other and share their opinions. Esspecially so, since AI is so controversial and having a large quantity of options researchers can access. Reddit provides access to various posts with video compatibility starting all the way from 2005 to present, making it well suited to the systematic sampling procedure described below.
+
+## Sample and Sampling Procedure
+
+
+
+Items were identified using the search string `AI AND Video Games`, applied to Reddit with results restricted to 2005 through 2026. This date range was selected because it encompases all of reddit history, making most posts around the time of Artificial intelligences growth in popularity.
+
+The initial search returned over 10,000 items. A random sample of 100 items was drawn using R (set.seed(451)), ensuring reproducibility. Items were excluded if the article language was not in english, Photo or video-only development logs with no accompanying text, or if any attached articles were repeats.
+
+The final sample consisted of **N = 100** items, each constituting one unit of analysis: one Reddit post, comments section included.
+
+## Variables and Measures
+
+
+**tone** refers to the way the source frames the subject matter. For the purposes of this study, tone was operationalized as Categorized by reading the article and determining the text based on whether it is Positive, negative, or neutral. Unless it is undetermined even after reading. Coders assigned one of [3] values: 1 = Positive, 2 = Neutral, 3 = Negative. When tone was ambiguous, the headline and top comment threads were weighted most heavily. Items for which a determination could not be made were assigned code 9 and excluded from analysis.
+
+**source_type** refers to what format the source is displayed as. This variable was operationalized as categorized based on the first quoted name or source. Whether it is a research paper, blog post, or social media post, coded into 3 categories: just text or picture, video, or link to another site.
+
+**frame_type** refers to the primary way information is structured within a source. Establish the primary frame by reading the headings and first three paragraphs of the source. Then, assign the source a point based on: Economic Consequences, A Potential Interest, Likelihood for Problems, Morality and Ethical Awareness, or Potential for Responsabilities. All Reddit posts are structured the same way. If post doesn't fall into proper category, sort by date created.
+
+**Outlet** refers to the media company in which the source is set out for the public. Categorized based on the subreddit genre the source is based on. i.e. r/GameDevelopment, r/gaming, or r/aiwars. Categories included ai focused, game focus, game development focused. if unclear, look at post contents to determine.
+
+
+## Pilot Test and Codebook Refinement
+
+
+Prior to full data collection, the codebook was applied to a pilot sample of 10 items to identify ambiguities and refine decision rules. The pilot revealed that the operationalization of outlet was ambiguous when posts were from subreddits that fell into multiple categories. In response, The rule was revised to look into the contents of the post, not just the subreddit it came from. No further substantial revisions were required, and the pilot items were retained in the final sample.

@@ -1,0 +1,65 @@
+---
+title: "Abstract"
+---
+
+<!-- ═══════════════════════════════════════════════════════════════
+     index.qmd — ABSTRACT & LANDING PAGE
+     
+     This is the first page visitors see on the website and the
+     first page of the PDF after the title page.
+     
+     ✏️  WHAT TO DO HERE:
+       1. Fill in your name, course info, and semester below.
+       2. Write your abstract LAST — after all other sections
+          are complete. Aim for ~150 words.
+       3. Delete all instruction comments before rendering.
+     ═══════════════════════════════════════════════════════════════ -->
+
+::: {.section-badge}
+MC 451 · Research Methods in Mass Media · Spring 2026
+:::
+
+**Author:** Your Name  
+**Instructor:** Dr. Alex P. Leith  
+**Institution:** Southern Illinois University Edwardsville  
+**Date:** May 2026  
+
+---
+
+::: {.abstract-box}
+**Abstract**
+
+*(Write your ~150-word abstract here. It should be a self-contained summary of the entire study: state your topic and why it matters, your two research questions, your method (content analysis of X items from Y source over Z time period), your key findings (what the frequency table and Chi-Square test showed), and your main takeaway. Write this last — it is much easier once all other sections exist.)*
+
+*(Example structure: "This study examines how [OUTLET] covered [TOPIC] during [DATE RANGE]. Using quantitative content analysis (N = XX), this study addressed two research questions regarding [RQ THEMES]. Findings indicate that [KEY RESULT 1] and [KEY RESULT 2]. A Chi-Square test revealed [SIGNIFICANT/NO SIGNIFICANT] association between [VAR 1] and [VAR 2], χ²(X) = X.XX, p = .XXX. These findings suggest [MAIN TAKEAWAY] and contribute to scholarly understanding of [BROADER SIGNIFICANCE].")*
+:::
+
+---
+
+### About This Study
+
+<!-- A short, plain-English paragraph (2–4 sentences) explaining
+     what this project is and who it is for. Think of this as
+     the "elevator pitch" version of your research.
+     This paragraph appears on the website landing page only
+     (it is de-emphasized in the PDF). -->
+
+This project presents original content analysis research conducted in partial fulfillment of MC 451: Research Methods in Mass Media at SIUE. *(Add 1–2 sentences describing your topic and the media source you studied.)*
+
+---
+
+### How to Navigate This Report
+
+| Section | What You Will Find |
+|---|---|
+| [Introduction](01-introduction.qmd) | Background, theory, and research questions |
+| [Methodology](02-methodology.qmd) | Data source, sampling, codebook, and procedures |
+| [Results](03-results.qmd) | Frequency tables, bar chart, and Chi-Square test |
+| [Discussion](04-discussion.qmd) | Interpretation, limitations, and conclusion |
+| [References](references.qmd) | Full bibliography |
+
+---
+
+<!-- INSTRUCTOR NOTE: The navigation table above links between
+     pages on the website. In the PDF, these become internal
+     cross-references automatically. No action needed. -->

@@ -1,0 +1,30 @@
+APA CSL PLACEHOLDER — READ BEFORE RENDERING
+============================================
+
+This project requires the APA citation style file (apa.csl) to format
+references correctly. Because this file is too large to include directly,
+you need to download it once before rendering.
+
+STEP 1 — Download apa.csl (choose ONE method):
+
+  Method A — RStudio Terminal (easiest):
+    curl -o apa.csl https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+
+  Method B — Direct download in your browser:
+    1. Go to: https://github.com/citation-style-language/styles/blob/master/apa.csl
+    2. Click the "Raw" button
+    3. Save the file as "apa.csl" into this project folder
+       (the same folder as _quarto.yml)
+
+  Method C — Use the Zotero desktop app:
+    Your Zotero installation already has this file. Find it at:
+    Windows: C:\Users\[You]\AppData\Roaming\Zotero\Zotero\styles\apa.csl
+    Mac:     ~/Library/Application Support/Zotero/styles/apa.csl
+    Copy it into this project folder.
+
+STEP 2 — DELETE THIS FILE after placing the real apa.csl here.
+
+STEP 3 — Render normally: quarto render
+
+If you skip this step, Quarto will render but references will not be
+formatted in APA style — they may appear unstyled or not at all.

@@ -1,0 +1,357 @@
+---
+title: "Results"
+---
+
+<!-- ═══════════════════════════════════════════════════════════════
+     03-results.qmd — RESULTS
+     
+     SOURCE ASSIGNMENTS TO DRAW FROM:
+       • Data Wrangling [R] (Week 13) — coding_data_clean.RDS
+       • Describing Data [R] (Week 14) — frequency table + bar chart
+       • Inferencing Data [R] (Week 15) — Chi-Square test
+     
+     ✏️  WHAT TO DO HERE:
+       1. Drop your coding_data_clean.RDS file into the project
+          folder (same level as this file).
+       2. In EACH code chunk, replace the placeholder variable
+          names (var1, var2, etc.) with YOUR actual column names.
+       3. Update the figure captions and narrative text to reflect
+          your actual findings.
+       4. The code is set to echo: false globally, so only outputs
+          (tables, charts) appear in the rendered document.
+          Set echo: true on any chunk if you want to show the code.
+       5. Delete all instruction comments before rendering.
+     ═══════════════════════════════════════════════════════════════ -->
+
+::: {.section-badge}
+Phase IV · The Analyst
+:::
+
+```{r}
+#| label: setup
+#| include: false
+
+# ── Load packages ──────────────────────────────────────────────────
+# If any package is missing, run: install.packages("PACKAGE_NAME")
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+# ── Load your cleaned data ─────────────────────────────────────────
+# Make sure coding_data_clean.RDS is in the project folder.
+# If it is in a subfolder, adjust the path: "data/coding_data_clean.RDS"
+coding_data <- readRDS("reddit_ai_video_games_coded.rds")
+
+# ── Quick sanity check (visible only when you run interactively) ───
+# glimpse(coding_data)
+# summary(coding_data)
+```
+
+This section presents the findings of the content analysis (N = `r nrow(coding_data)` items). Results are organized to address each research question in turn. Descriptive statistics are presented first, followed by inferential analysis.
+
+---
+
+## Descriptive Statistics
+
+### Overview of the Sample
+
+```{r}
+#| label: tbl-sample-overview
+#| tbl-cap: "Table 1. Sample composition by [VARIABLE — e.g., outlet, year, or another grouping variable]."
+
+# ── INSTRUCTIONS ───────────────────────────────────────────────────
+# Replace `outlet` with your actual grouping/administrative variable.
+# This table gives readers a sense of where your data came from.
+# ──────────────────────────────────────────────────────────────────
+
+coding_data |>
+  count(outlet, name = "outlet") |>                    # ← replace `outlet`
+  mutate(
+    Percent = round(n / sum(n) * 100, 1),
+    Percent = paste0(Percent, "%")
+  ) |>
+  rename(
+    "Source / Outlet" = outlet,                   # ← replace `outlet`
+    "n" = n,
+    "% of Sample" = Percent
+  ) |>
+  kable(align = c("l", "c", "c")) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = TRUE,
+    font_size = 13
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+*(2–3 sentences describing Table 1. For example: "The sample was drawn from [N sources/outlets]. The largest share of items came from [SOURCE], accounting for X% of the total sample. Coverage was distributed [evenly/unevenly] across the study period.")*
+
+---
+
+### Distribution of Primary Variable: [Variable 1 Name]
+
+```{r}
+#| label: tbl-var1-freq
+#| tbl-cap: "Table 2. Frequency distribution of [Variable 1 Name] (N = XX, excluding code-9 items)."
+
+# ── INSTRUCTIONS ───────────────────────────────────────────────────
+# Replace `var1` with your first primary variable column name.
+# Replace "Unable to Determine" with whatever your code-9 label is.
+# ──────────────────────────────────────────────────────────────────
+
+coding_data |>
+  filter(var1 != "Unable to Determine") |>        # ← replace `var1`
+  count(var1, name = "n") |>                      # ← replace `var1`
+  arrange(desc(n)) |>
+  mutate(
+    Percent = round(n / sum(n) * 100, 1),
+    `Cumulative %` = round(cumsum(Percent), 1),
+    Percent = paste0(Percent, "%"),
+    `Cumulative %` = paste0(`Cumulative %`, "%")
+  ) |>
+  rename(
+    "[Variable 1 Name]" = var1,                   # ← replace both
+    "N" = n
+  ) |>
+  kable(align = c("l", "c", "c", "c")) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = TRUE,
+    font_size = 13
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+*(2–3 sentences describing Table 2. Report the most and least common categories. Connect to RQ1: does this distribution speak to what your first research question was asking?)*
+
+---
+
+### Bar Chart: Distribution of [Variable 1 Name]
+
+```{r}
+#| label: fig-var1-bar
+#| fig-cap: "Figure 1. Distribution of [Variable 1 Name] across all coded items (N = XX, code-9 excluded). [Add 1 sentence describing the most important visual pattern here — captions should be self-contained.]"
+#| fig-width: 7
+#| fig-height: 4.5
+
+# ── INSTRUCTIONS ───────────────────────────────────────────────────
+# Replace `var1` with your variable column name.
+# Adjust the fill color, axis labels, and title to match your study.
+# The theme_minimal() + custom colors keep it professional.
+# ──────────────────────────────────────────────────────────────────
+
+coding_data |>
+  filter(var1 != "Unable to Determine") |>        # ← replace `var1`
+  count(var1) |>                                  # ← replace `var1`
+  mutate(
+    pct = n / sum(n),
+    var1 = fct_reorder(var1, n, .desc = TRUE)     # ← replace `var1` (×2)
+  ) |>
+  ggplot(aes(x = var1, y = pct, fill = var1)) +  # ← replace `var1` (×2)
+  geom_col(width = 0.65, show.legend = FALSE) +
+  geom_text(
+    aes(label = paste0(round(pct * 100, 1), "%")),
+    vjust = -0.4,
+    size = 3.5,
+    color = "#333333"
+  ) +
+  scale_y_continuous(
+    labels = scales::percent_format(accuracy = 1),
+    limits = c(0, 1),
+    expand = expansion(mult = c(0, 0.08))
+  ) +
+  scale_fill_manual(values = c(
+    "#b71c1c", "#e57373", "#ef9a9a", "#ffcdd2", "#880e4f"
+    # Add or remove colors to match the number of categories you have
+  )) +
+  labs(
+    title = "Distribution of [Variable 1 Name]",
+    subtitle = "Source: [YOUR ARCHIVE], [DATE RANGE] | N = XX",
+    x = "[Variable 1 Name]",
+    y = "Proportion of Items"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", color = "#b71c1c"),
+    plot.subtitle = element_text(color = "#666666", size = 9),
+    axis.title = element_text(color = "#333333"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+*(2–3 sentences interpreting Figure 1. What is the dominant category? How concentrated or spread is the distribution? Does anything stand out as unexpected?)*
+
+---
+
+### Distribution of Secondary Variable: [Variable 2 Name]
+
+```{r}
+#| label: tbl-var2-freq
+#| tbl-cap: "Table 3. Frequency distribution of [Variable 2 Name] (N = XX, excluding code-9 items)."
+
+coding_data |>
+  filter(var2 != "Unable to Determine") |>        # ← replace `var2`
+  count(var2, name = "n") |>                      # ← replace `var2`
+  arrange(desc(n)) |>
+  mutate(
+    Percent = round(n / sum(n) * 100, 1),
+    Percent = paste0(Percent, "%")
+  ) |>
+  rename(
+    "[Variable 2 Name]" = var2,                   # ← replace both
+    "N" = n
+  ) |>
+  kable(align = c("l", "c", "c")) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = TRUE,
+    font_size = 13
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+*(2–3 sentences describing Table 3. Which category was most common? Least common? Does this align with what you expected based on your qualitative memo?)*
+
+---
+
+## Inferential Analysis
+
+### Chi-Square Test of Independence: [Variable 1] × [Variable 2]
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     The Chi-Square test asks: Is there a statistically significant
+     relationship between Variable 1 and Variable 2?
+     
+     Before running, make sure:
+       • Both variables are factors (categorical)
+       • You have excluded code-9 rows
+       • Each expected cell count is ≥ 5 (check output of test)
+     
+     If expected cell counts are too low, consider collapsing
+     categories (e.g., merging 2 low-frequency categories into
+     an "Other" category) and note this in your text.
+     ──────────────────────────────────────────────────────────────── -->
+
+```{r}
+#| label: tbl-crosstab
+#| tbl-cap: "Table 4. Cross-tabulation of [Variable 1 Name] by [Variable 2 Name] (N = XX, code-9 excluded)."
+
+# ── INSTRUCTIONS ───────────────────────────────────────────────────
+# Replace `var1` and `var2` with your actual variable column names.
+# ──────────────────────────────────────────────────────────────────
+
+# Filter out code-9 rows for both variables
+chi_data <- coding_data |>
+  filter(
+    var1 != "Unable to Determine",               # ← replace `var1`
+    var2 != "Unable to Determine"                # ← replace `var2`
+  )
+
+# Cross-tabulation table
+cross_tab <- table(chi_data$var1, chi_data$var2)  # ← replace both
+
+# Display as formatted table
+cross_tab |>
+  as.data.frame.matrix() |>
+  rownames_to_column(var = "[Variable 1 Name]") |>  # ← replace label
+  kable(align = "lcccc") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = TRUE,
+    font_size = 13
+  ) |>
+  add_header_above(
+    c(" " = 1, "[Variable 2 Name]" = ncol(cross_tab))  # ← replace label
+  ) |>
+  row_spec(0, bold = TRUE, background = "#b71c1c", color = "white")
+```
+
+*(2–3 sentences describing Table 4 — the cross-tab. Which cell combinations were most common? Were any cells surprisingly empty or surprisingly full?)*
+
+```{r}
+#| label: chi-square-test
+#| include: false
+
+# ── Run the Chi-Square test ────────────────────────────────────────
+chi_result <- chisq.test(cross_tab)
+
+# ── Extract values for inline reporting ───────────────────────────
+chi_x2  <- round(chi_result$statistic, 2)
+chi_df  <- chi_result$parameter
+chi_p   <- round(chi_result$p.value, 3)
+chi_sig <- ifelse(chi_result$p.value < .05, "statistically significant", "not statistically significant")
+
+# ── Check expected cell counts ────────────────────────────────────
+# Any expected count below 5 is a concern. Check: chi_result$expected
+min_expected <- round(min(chi_result$expected), 2)
+```
+
+**Chi-Square Result:**
+
+A Chi-Square test of independence was conducted to examine the relationship between [Variable 1 Name] and [Variable 2 Name]. The result was `r chi_sig`, χ²(`r chi_df`) = `r chi_x2`, *p* = `r chi_p`.
+
+```{r}
+#| label: fig-mosaic
+#| fig-cap: "Figure 2. Mosaic plot showing the relationship between [Variable 1 Name] and [Variable 2 Name]. Cell width represents the proportion of items in each [Variable 2] category; cell height represents the proportion assigned each [Variable 1] value."
+#| fig-width: 7
+#| fig-height: 5
+
+# ── INSTRUCTIONS ───────────────────────────────────────────────────
+# A mosaic plot visualizes the Chi-Square relationship.
+# Replace `var1` and `var2` with your actual column names.
+# Replace axis labels with your variable names.
+# ──────────────────────────────────────────────────────────────────
+
+chi_data |>
+  count(var2, var1) |>                           # ← replace both
+  group_by(var2) |>                              # ← replace `var2`
+  mutate(prop = n / sum(n)) |>
+  ggplot(aes(x = var2, y = prop, fill = var1)) + # ← replace both
+  geom_col(position = "fill", width = 0.7, color = "white", linewidth = 0.4) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  scale_fill_manual(values = c(
+    "#b71c1c", "#e57373", "#ef9a9a", "#ffcdd2", "#880e4f"
+  )) +
+  labs(
+    title = "[Variable 1 Name] by [Variable 2 Name]",
+    subtitle = paste0(
+      "χ²(", chi_df, ") = ", chi_x2, ", p = ", chi_p,
+      " | Source: [YOUR ARCHIVE], [DATE RANGE]"
+    ),
+    x = "[Variable 2 Name]",
+    y = "Proportion",
+    fill = "[Variable 1 Name]"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", color = "#b71c1c"),
+    plot.subtitle = element_text(color = "#666666", size = 9),
+    axis.text.x = element_text(angle = 25, hjust = 1),
+    legend.position = "right"
+  )
+```
+
+*(3–5 sentences interpreting the Chi-Square result in plain English. Required elements:*
+*① State whether the result is significant at α = .05.*
+*② If significant: describe the direction of the relationship — which combination of categories was more or less common than expected? Reference Figure 2.*
+*③ If not significant: state clearly that the data did not provide evidence of a relationship between the two variables, and note what this means for your RQ2.*
+*④ Report the minimum expected cell count (`r min_expected`) and note whether it meets the ≥ 5 assumption.)*
+
+---
+
+## Summary of Findings
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     A brief bulleted or short-paragraph summary of ALL key results
+     before the reader moves to Discussion. Think of this as a
+     "results at a glance" for the website reader.
+     ──────────────────────────────────────────────────────────────── -->
+
+::: {.callout-note}
+## Key Findings at a Glance
+
+- **RQ1** ([PASTE RQ1 SHORT FORM]): [1-sentence summary of the descriptive finding that addresses RQ1 — e.g., "The most common tone in coverage was Negative (X%), followed by Neutral (X%) and Positive (X%)."]
+
+- **RQ2** ([PASTE RQ2 SHORT FORM]): [1-sentence summary of the inferential finding — e.g., "A statistically significant relationship was found between tone and source type, χ²(X) = X.XX, p = .XXX, suggesting that [DIRECTION OF RELATIONSHIP]."]
+:::

@@ -1,0 +1,91 @@
+---
+title: "Discussion & Conclusion"
+---
+
+<!-- ═══════════════════════════════════════════════════════════════
+     04-discussion.qmd — DISCUSSION & CONCLUSION
+     
+     SOURCE ASSIGNMENTS TO DRAW FROM:
+       • Reading Journals (ongoing) — theoretical grounding
+       • Annotated Manuscript (Week 5) — theory + prior findings
+       • Your own Results (previous chapter) — what you found
+     
+     ✏️  WHAT TO DO HERE:
+       1. Do NOT introduce new data or statistics here.
+          This section interprets; it does not report.
+       2. Directly answer both Research Questions by name.
+       3. Connect findings back to the theory from Chapter 1.
+       4. Be honest about limitations — this shows intellectual
+          maturity, not weakness.
+       5. Aim for 400–500 words total.
+       6. Delete all instruction comments before rendering.
+     ═══════════════════════════════════════════════════════════════ -->
+
+::: {.section-badge}
+Phase V · The Publisher
+:::
+
+This study examined [RESTATE TOPIC AND OUTLET IN ONE SENTENCE]. Using quantitative content analysis of N = [YOUR N] items collected from [ARCHIVE] between [DATE RANGE], the study addressed two research questions concerning [BRIEF DESCRIPTION OF RQ THEMES]. The findings are discussed below in relation to each research question and the broader theoretical framework.
+
+## Addressing the Research Questions
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     Work through each RQ explicitly. For each one:
+       1. Re-state the RQ (you can quote it from Ch. 1 using a
+          blockquote, or just name it by number).
+       2. State what the data showed (reference the specific
+          table/figure from Results).
+       3. Interpret what that means — so what?
+     ──────────────────────────────────────────────────────────────── -->
+
+**RQ1** asked [RESTATE RQ1]. The frequency distribution presented in Table 2 and Figure 1 revealed that [SUMMARIZE THE KEY DESCRIPTIVE FINDING — what was most common, least common, etc.]. This suggests that [INTERPRETATION — what does this distribution mean for our understanding of how this outlet covers this topic?]. [1–2 sentences connecting this finding to prior research or the theoretical framework — does it confirm expectations, or does it challenge them?]
+
+**RQ2** asked [RESTATE RQ2]. The Chi-Square test of independence (Table 4, Figure 2) [DID / DID NOT] reveal a statistically significant relationship between [Variable 1] and [Variable 2], χ²([df]) = [X.XX], *p* = [.XXX]. [If significant: "This finding indicates that [VARIABLE 1] and [VARIABLE 2] are not independent — specifically, [DESCRIBE THE PATTERN: which combination was over- or under-represented?] This pattern [ALIGNS WITH / CHALLENGES] the predictions of [THEORY NAME] by [EXPLANATION]."] [If not significant: "The absence of a significant relationship suggests that [VARIABLE 1] does not vary systematically by [VARIABLE 2] in this dataset. This null result is itself informative: it implies that [INTERPRETATION OF WHAT THE NULL RESULT MEANS]."]
+
+## Theoretical Implications
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     Step back from the specific findings and ask: what do these
+     results mean for the theory you applied? Do they support it,
+     complicate it, or suggest it needs refinement?
+     2–4 sentences.
+     ──────────────────────────────────────────────────────────────── -->
+
+Taken together, these findings [SUPPORT / COMPLICATE / PARTIALLY SUPPORT] the predictions of [THEORY NAME]. [THEORY NAME] would predict [WHAT THE THEORY EXPECTED], and the present results [DID / DID NOT] align with this prediction. [1–2 sentences on broader significance — what does this mean for how we understand media coverage of this topic generally, beyond your specific sample?]
+
+## Limitations
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     Every study has limits. Identifying them honestly is a sign
+     of scholarly rigor. Address at least THREE of the following:
+       • Sample size and generalizability
+       • Single coder reliability (you were the only coder)
+       • Time period (results may not generalize beyond your window)
+       • Archive coverage (what the archive may have missed)
+       • Operationalization choices (how your definitions shaped results)
+     ──────────────────────────────────────────────────────────────── -->
+
+Several limitations of the present study should be noted. First, [LIMITATION 1 — e.g., "the sample was drawn from a single archive, which may not capture the full range of coverage available across all relevant outlets and platforms"]. Second, [LIMITATION 2 — e.g., "all coding was conducted by a single coder, which precludes the calculation of inter-rater reliability. Future studies should employ at least two independent coders and report Cohen's Kappa or Krippendorff's Alpha"]. Third, [LIMITATION 3 — e.g., "the study period of [DATE RANGE] may reflect idiosyncratic coverage patterns tied to [SPECIFIC EVENT], limiting the generalizability of findings to other time periods"]. [Add a fourth limitation if relevant.]
+
+These limitations notwithstanding, the study's systematic sampling procedure, pre-registered codebook, and use of inferential statistics represent meaningful methodological strengths that support the credibility of the findings.
+
+## Conclusion
+
+<!-- ── SECTION PURPOSE ─────────────────────────────────────────────
+     Close the report with:
+       1. The single most important takeaway (1–2 sentences).
+       2. The practical or scholarly "so what" — why should anyone
+          care about this finding?
+       3. A direction for future research (1–2 sentences).
+     Keep this tight — 3–5 sentences total.
+     ──────────────────────────────────────────────────────────────── -->
+
+The central finding of this study is that [STATE YOUR SINGLE MOST IMPORTANT FINDING IN ONE CLEAR SENTENCE]. This matters because [EXPLAIN THE REAL-WORLD OR SCHOLARLY SIGNIFICANCE — why should a reader care about this?]. Future research might extend this work by [SUGGEST A LOGICAL NEXT STEP — e.g., expanding the sample to include additional outlets, studying a longer time period, employing a different theoretical framework, or adding a qualitative close-reading component to complement the quantitative findings].
+
+---
+
+::: {.callout-note}
+## A Note on This Project
+
+This study was conducted as a course project in MC 451: Research Methods in Mass Media at Southern Illinois University Edwardsville (Spring 2026), under the supervision of Dr. Alex P. Leith. The data, codebook, and analysis files are available in the GitHub repository linked at the top of this page.
+:::
